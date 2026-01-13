@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wallpaper Website</title>
+
+<style>
+/* ====== BASIC RESET ====== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0f0f0f;
+    color:white;
+}
+
+/* ====== HEADER ====== */
+header{
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+}
+
+/* ====== BUTTONS ====== */
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.buttons button{
+    padding:10px 20px;
+    border:none;
+    background:black;
+    color:white;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;        
+  border: none;
+  padding: 15px 30px;       
+  margin: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.buttons button:hover{
+    background:white;
+    color: black; 
+  transform: scale(1.1);      
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* ====== GALLERY ====== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+    gap:10px;
+    padding:10px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+/* Mobile */
+@media (max-width:600px){
+    header{
+        font-size:20px;
+    }
+    .gallery img{
+        height:200px;
+    }
+}
+
+/* Tablet */
+@media (min-width:601px) and (max-width:900px){
+    .gallery img{
+        height:230px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>Wallpaper Gallery</header>
+
+<div class="buttons">
+    <button onclick="filterImages('all')">All Wallpapers</button>
+    <button onclick="filterImages('car')">Cars Worlds</button>
+    <button onclick="filterImages('anime')">Anime Zone</button>
+    <button onclick="filterImages('animal')">Animals World</button>
+</div>
+
+<div class="gallery" id="gallery">
+
+    <!-- ===== CARS ===== -->
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1686730540277-c7e3a5571553?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1628519592419-bf288f08cef5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1541348263662-e068662d82af?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1625231334168-35067f8853ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1686730540270-93f2c33351b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1516298252535-cf2ac5147f9b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1579508542697-bb18e7d9aeaa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1562911791-c7a97b729ec5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">|
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1686730540277-c7e3a5571553?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1677993185892-f7823f314c4c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3BvcnRzJTIwY2FyfGVufDB8fDB8fHww" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1592853625597-7d17be820d0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2232400853/photo/generic-modern-sports-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=bVLiXSI-CQWcQ82JCjc3eRj03jur0OS6HeFst6mIKno=" class="car">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2172823267/photo/side-view-of-classic-muscle-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=xYrUPp5oi6q-e6XtN8lgUOZptQv79OnPOdztELbRDf0=" class="car">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2162014024/photo/classic-american-muscle-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=mBFB1j9clHLqxwMVAZ3ELNjzFImk1xKhRhICnJWbPcM=" class="car">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2187941230/photo/retro-power.webp?a=1&b=1&s=612x612&w=0&k=20&c=eRT30h6TqdJc4ObNZ_kRZlUkjhDpc-eR3OxPiKGDaug=" class="car">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2213196507/photo/luxury-metallic-car-wheel-with-copy-space.webp?a=1&b=1&s=612x612&w=0&k=20&c=TS1aeRTvRDRWvP1JeX9MWuXUOH4eLOLW3JRMn3Y3zvY=" class="car">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1738048835/photo/empty-garage-with-modern-sports-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=US6ulwkcBpvN4lZ8IKADs_elXFA0RXieKKEkUFnryjU=" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1609386464913-4cbfa39de540?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1695281399686-087a07cdc39c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1664303619183-6effc8cf1c01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1695016595053-254e4a7a1f29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1737697221626-8a957abad2df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1611840973188-1329e9f2b8dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1736151102457-90a42cf54f49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1622398703904-7ae5d55f8e1a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1620223741726-7d39ff6e4e6c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1561280612-f1c16d52999e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1558486799-ebad18202175?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1571970869467-180ff56b3568?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1580014317999-e9f1936787a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1736151101112-51574226fde6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODV8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1511994477422-b69e44bd4ea9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODh8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1606222742864-7c09da77e0ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fHNwb3J0cyUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIwfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1737623479045-a6a27357ffa9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1584902645120-f86567d892b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIzfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1493238792000-8113da705763?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI0fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1716687504751-6788a860cbfe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMyfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1737597231055-447a5ed6786f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQxfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1532115345388-6d3d2021f188?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1620971409036-50f8ae011b4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ2fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1520587210458-bd3bee813b97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1627727669629-06af2a397072?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU0fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1617073682506-356a90685a91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU2fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1539713904642-b4d144f769d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU5fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1694094313123-36509fc3e1ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY5fHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1661050629684-1c3109469524?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcyfHxzcG9ydHMlMjBjYXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1608578702177-1ea59540ac72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fGNhciUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1584978881961-27af5fb6d7ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGNhciUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1628890954311-74476fcbf0d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGNhciUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1612821969256-55c71d64c245?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTF8fGNhciUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1699331834815-ef4b380b8362?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGNhciUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1617654112329-c446806d40e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA0fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1675600857281-0057e83f1fff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1677564923788-87d8a222d510?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1544986342-f4f2e11b7c02?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA2fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1694206014747-03cd0bcfba3a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1526549928000-f98211febecd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEyfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1589750602846-60028879da9b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMwfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1612393266591-c32944e815c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM0fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1554294314-80a5fb7e6bd5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM4fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1620288989247-7bed762ccb12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ0fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1737413853673-a1ec37fea58f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUxfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1724391114153-aab0c652371c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU0fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1735012317678-8074b8359062?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYyfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1621688284411-65e66264b4c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYxfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1574913923087-1605248ae3b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1676288176903-a68732722cce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY4fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1627050627214-9d4362975432?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTczfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1694206015192-caa0bf487ef2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc1fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1605816988069-b11383b50717?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg0fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1613234259978-98229fb76d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg2fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1542754725-7eeb45c3ae5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg5fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1518631145805-509a14b04f46?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk3fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1705526788502-3d9cd0d0a5af?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjAxfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1730795806848-6d4670514e33?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA4fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1719906238389-82415b2ff612?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEyfHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1687060474759-d8229d523c41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjE3fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1719906238454-e12ade945e88?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI1fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1626758889762-aae1797be812?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI2fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1633356593834-608fe98620b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI3fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1538690931238-dcc3b4263c2e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM4fHxjYXIlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="car">
+
+    <!-- ===== ANIME ===== -->
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23013.jpg" class="anime">
+    <img loading="lazy" src="https://source.unsplash.com/401x600/?anime-art" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/24391.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/24450.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/24263.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23947.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/24260.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23616.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23761.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23649.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23604.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23430.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23222.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23013.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23027.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22952.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22929.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22947.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/23001.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22859.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22725.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22715.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22567.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22724.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22577.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22575.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22574.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22503.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22499.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22604.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22588.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22582.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21872.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21604.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21915.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21415.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21604.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21414.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21416.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21420.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21418.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21530.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21363.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/21085.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20241.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20031.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20027.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19881.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19846.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19857.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19863.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19856.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19862.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19865.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19518.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19414.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19434.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19423.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19267.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19127.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19188.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19196.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19055.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19030.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/19049.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18713.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18685.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18688.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18503.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18692.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18509.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18509.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18785.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18509.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18785.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18719.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18363.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18414.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18381.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18358.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17972.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17997.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17760.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17622.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17603.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17599.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17599.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17593.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17621.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17610.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17605.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17277.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16532.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16721.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16712.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16741.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20873.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16062.png" class="anime">  
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16126.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20879.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/15843.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/15334.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/15361.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/15228.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/15324.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/15246.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14938.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20853.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14796.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14684.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14539.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14431.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22979.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20904.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13988.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13969.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13974.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13925.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20881.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20881.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13535.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/22506.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13399.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20941.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/20948.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12179.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16950.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10596.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10697.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10695.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10828.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10812.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/25134.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/25100.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10446.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10458.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10467.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10513.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14621.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14622.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14631.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14630.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14644.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14667.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14671.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17923.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14077.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/14158.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13866.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13878.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13882.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13889.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13897.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13892.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13923.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13912.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13779.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13799.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13804.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13822.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13824.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13847.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13853.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12186.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12438.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12455.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13632.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13633.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13637.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13650.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/13649.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10831.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10865.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12111.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12169.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/12182.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10595.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10633.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10696.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10742.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10816.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10443.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10442.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10454.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10454.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10468.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10475.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10498.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10509.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10510.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10550.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10405.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10416.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10416.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10407.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10416.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10409.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10438.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16482.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16921.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18922.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10080.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10097.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10097.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/10356.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18699.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/1817.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/1913.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/1921.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16556.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16412.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17587.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16933.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16414.jpeg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18716.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16373.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17590.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16732.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16732.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17597.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17925.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/17592.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16917.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18829.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/16483.jpg" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18345.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/18345.png" class="anime">
+    <img loading="lazy" src="https://4kwallpapers.com/images/walls/thumbs/4945.png" class="anime">
+
+
+
+
+    <!-- ===== ANIMALS ===== -->
+    <img loading="lazy" src="https://media.istockphoto.com/id/1064136288/photo/she-bear-and-cubs.jpg?s=612x612&w=0&k=20&c=yawood030on-Gw0fAnEPO6JyrHw8Fflr7-S_ZOmPwJU=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1017810548/photo/the-little-owl-with-his-chick-standing-on-a-stone.jpg?s=612x612&w=0&k=20&c=j4otb3IRt_CDUYNbUg4OgKBWu7HIU5mU6gkw8gxziD4=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/530674261/photo/koala-resting-and-sleeping-on-his-tree.jpg?s=612x612&w=0&k=20&c=8SX6k13tfU_HUmJOwbJOJi5WxryTvBCgVzvcnsGHTZ4=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/526704439/photo/polar-bear-cub.jpg?s=612x612&w=0&k=20&c=shb1BO-Q59kn_H24G6NeFasv4OlGNnDO6R9z-9EIX8U=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/501424096/photo/red-fox.jpg?s=612x612&w=0&k=20&c=AdSTUEiAB4tGZ5pOHRcfOM-OLpV8KtXQRlxqhNs3cQI=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1164887104/photo/a-baby-humpback-whale-plays-near-the-surface-in-blue-water.jpg?s=612x612&w=0&k=20&c=UReduCVLhZgewRpcd78_lhZeRloJ1KIQnBGiw-BeNJc=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1140921467/photo/polar-bear-mother-and-cub-portrait.jpg?s=612x612&w=0&k=20&c=ShRlsb-P1RJlHO4ToCf7U5n29CBkvMTvCBlJWvAonww=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/139995566/photo/lazy-koala.jpg?s=612x612&w=0&k=20&c=hXm98azwd81s1osd7HTpNOKPCyQEIUUdYU0VyUre2q0=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1140352519/photo/two-lions-cubs-nuzzle-heads-together.jpg?s=612x612&w=0&k=20&c=iWnFEm-_Lw1leX6HD2r4dKBaD9dzt5uO6VUpaf9g4RY=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/184987985/photo/panda-with-tongue-out.jpg?s=612x612&w=0&k=20&c=69UJ-p5SIgNw_d-DHjDWqAFEFe8AsmssUGpGRr8dmB8=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/516446406/photo/cute-panda-bear-climbing-in-tree.jpg?s=612x612&w=0&k=20&c=T-9c-qGV3b3JhTy8jEfuhdh2QS3eJT5mSK07yuiiG6c=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/173899753/photo/tired-red-panda.jpg?s=612x612&w=0&k=20&c=nDvFTF-Xq9GL7S9-ZHo2Zo6uzjg75I18rQdyuTHoA38=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1041695652/photo/happy-seal-pup.jpg?s=612x612&w=0&k=20&c=1b90sjf5o9pp0BK8hsGDCWhM2neUVeSE1ZbwXwqUn6U=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/614737202/photo/squirrel-eagerly-reaching-for-what-she-want-most.jpg?s=612x612&w=0&k=20&c=FMmShRQBaIhEkbCTq1vTZUYZUTUjnvnXOxN3ZmhZZd8=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/481683922/photo/two-dolphins-under-water.jpg?s=612x612&w=0&k=20&c=EKWn3dK1zNqNJVXR0yx9BFAjEvO9YjgFy7VqLsYoIPo=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1142601416/photo/european-rabbit.jpg?s=612x612&w=0&k=20&c=ckvO8p0tGR1na86TlsTbBc_MbOt7X70gbuDUuOWAXQ0=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1165028488/photo/red-tailed-black-cockatoo.jpg?s=612x612&w=0&k=20&c=YaDqcWWAXiQFkX9PtRrqXGt4mt3RJqmeU0Vz-fNWJC8=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/475776099/photo/sleeping-giant-panda-baby.jpg?s=612x612&w=0&k=20&c=AkNFDSMRDNa6uUlrhszunqd19K1FPCV3lv3m2OAmHlc=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/824860820/photo/barbary-macaque.jpg?s=612x612&w=0&k=20&c=n8oGBDq9oG90VPF6g-8ZS4tXaR5huTdRY4hUX2DjEkk=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1397499584/photo/jumping-brown-hares.jpg?s=612x612&w=0&k=20&c=jTnteJ9fAq_ifyUtYil7sCc6hZIYgUxoBFH937mPxs0=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/528681231/vector/birchwood.jpg?s=612x612&w=0&k=20&c=N6JcckeUlqEh8_VGuV05kqRLGP6g7lVbGnOM-Agvt30=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1013631952/photo/two-harvest-mice-sitting-on-poppy-heads-kissing.jpg?s=612x612&w=0&k=20&c=vjvLabW41_OhhXix_bX_q9nXFx1jBD86tYD6ppwXvfo=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/943885018/photo/crabeater-seal-lie-on-the-sun-in-antarctica.jpg?s=612x612&w=0&k=20&c=5-pWWDO4ZMpDny63kd829WZEc9z3NXN3SRbNlYEkRqY=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1302540155/photo/american-robin-in-winter-american-robin-in-winter.jpg?s=612x612&w=0&k=20&c=xXbnTCF_MxffIvdOf1l4k2TTtDGA7V5O5mpNDknRu6o=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/182686524/photo/nap-time.jpg?s=612x612&w=0&k=20&c=1kSSuM1_42hi9jSamitj5zKGaouEVzBEyaYAZZtox3A=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/468446643/photo/cute-panda-bear.jpg?s=612x612&w=0&k=20&c=j9uxVCX6TRz-MFN23feDmDH8PJjfza4Xu2QBia5M1VU=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1250266235/photo/toucan-sitting-on-the-branch-in-the-forest-green-vegetation-costa-rica-nature-travel-in.jpg?s=612x612&w=0&k=20&c=t0SMV8VG9DylVlTRu5oLehArUQDPB_nN5zT6bagAaVY=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1070278894/photo/ducks-in-a-row-leading-the-pack.jpg?s=612x612&w=0&k=20&c=ekZvByTDRQWda4hih3lcrcBu6auO7sjD0bbp1XKLGiI=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/157279701/photo/two-wolves.jpg?s=612x612&w=0&k=20&c=v6_z64G3ik7lB8UvnOcwnnbTI3pbxK9Fc1DAwRxVsRA=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/515060840/photo/nestlings-of-a-sparrow-sitting-on-a-tree-branch.jpg?s=612x612&w=0&k=20&c=6Dm7KueLRq4w4e-LQHlfySn6ruNbotLtjZ5pL7SCjo0=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1580733827/photo/red-fox-in-a-meadow-with-a-butterfly-sitting-on-a-nose.jpg?s=612x612&w=0&k=20&c=ka0Iail7TckFGXkKnSdyxa74sANBSBeMdfL_b1VGDpA=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1451552559/photo/playful-mountain-gorillas.jpg?s=612x612&w=0&k=20&c=1fFwf0OQQ2c3Ubiv8a4mTETA-yJCi_YiHnuMPlw4il0=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2155312542/photo/curious-raccoon.jpg?s=612x612&w=0&k=20&c=0S7PT87LO5L2oj_PJCtXHUZa10Wcy51gkj9SSQ5XzmU=" class="animal">
+     <img loading="lazy" src="https://media.istockphoto.com/id/187713385/photo/baby-racoon.jpg?s=612x612&w=0&k=20&c=cQeI26orD-TqH8yd_KjQtMh6y20hbZBiVOakCDtj0bs=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/680121852/photo/a-wild-squirel-captured-in-a-cold-sunny-autumn-day.jpg?s=612x612&w=0&k=20&c=kwUaAp7h0L6fSm4t5KgU7-d3IDjuw2m7bHKnXdgV-LY=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/505640051/photo/tarzan-loved-spending-time-with-his-little-friend.jpg?s=612x612&w=0&k=20&c=9Id8m12fxtgNHGZI7095kZZ-Tk6w9hS6Ri0ywk4SeyM=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/469451158/photo/cub-of-giant-panda-bear-playing-on-tree-chengdu-china.jpg?s=612x612&w=0&k=20&c=M9_BIOrdkbhkhSCGKKlIX5c8pLByBfH94KZKQLBDZGw=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1868800452/photo/mountain-cottontail-rabbit-in-winter-in-yellowstone-national-park-wyoming-and-montana.jpg?s=612x612&w=0&k=20&c=3Bg4-ZKuLYNsMhh9BAeS5YbmHM6XAJ7AG3S3r-7YKNA=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/459956269/photo/male-daurian-redstart-in-flight-phoenicurus-auroreus.jpg?s=612x612&w=0&k=20&c=TNE8uxXv8DGs3PNKl5uvP8jryJr4JsBOXNKH7BJFVOk=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/535844651/photo/baby-panda-resting-on-a-tree.jpg?s=612x612&w=0&k=20&c=Fko81yPtZnVArZ2hs3X9xucPLlilg6Gnd8ex1aP5BeE=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1183449197/photo/deer-fawn-in-the-forest-of-the-catskill-mountains-in-new-york-state-usa.jpg?s=612x612&w=0&k=20&c=2xwN2fWYAtO890SSGQ3AX17Hx-30M2l2eGUT_ChJn64=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/622064740/photo/australian-koala-bear-native-animal-with-baby.jpg?s=612x612&w=0&k=20&c=Lk8kT97aYOBd3lYV8GwRRw_dYs1L7hegLeUL9hHobwY=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1788988843/photo/white-fluffy-fox-in-the-snow-wild-animal-in-nature.jpg?s=612x612&w=0&k=20&c=tPPGfIoEHYOjh3Xg0g_RBCju_FhkiP9GU65z6kBztcQ=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1359576900/video/hummingbird-hovering-in-backlighting-sunlight-slow-motion-and-zoom-in-zoom-out.avif?s=640x640&k=20&c=y0lq6wx_lW9-HCY-Q_DDHPiaiFPknYnbhzvjQyMBIAE=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2153576766/photo/eastern-bluebird-in-flight-couple-male-and-female.jpg?s=612x612&w=0&k=20&c=FUdHzmNTF8TbGuHBNJqJDYNikut7Cm5ZbMmgUwE9t_w=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/645808138/photo/funny-birds-funny-arguing-in-a-park-during-a-snowfall.jpg?s=612x612&w=0&k=20&c=_u29Ge0PFGHrhX8Aw26QqLH0MGo9g996rcc-x6gQK9c=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1500620339/video/a-close-up-of-a-little-owl.avif?s=640x640&k=20&c=48bhUUcLT_iXwkL95zQF2pXGz0SuR3VL69TDceJBBak=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1263025199/photo/red-panda-eating-bamboo-leaves.jpg?s=612x612&w=0&k=20&c=88PzN1_ag2CnGqpRxJHU2qm689IM_gG8pJn6GXbcMg4=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1794921441/video/macaws-in-flight-across-the-amazon-rainforest.avif?s=640x640&k=20&c=PngvivSY4ASeo-Sn1vjuMXSme5h6ItIcu4_jKx0-CAo=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1184449355/photo/red-panda-greeting-with-raised-paw.jpg?s=612x612&w=0&k=20&c=JdKq9DsGnAv1yw3Ch9GFFoljqEK0jEiw2QAqXkDTEUk=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1201719554/photo/three-capuchin-monkeys-on-tree.jpg?s=612x612&w=0&k=20&c=oYAGP_e0v5j41YELqr5E0I9YYm-FP2z68CAZc_Kuxu8=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1466866573/video/little-brown-rabbit-on-green-grass.avif?s=640x640&k=20&c=0B5Ft0VAw59GHMjsbBbWw6EsurDvtzMfLRQhWElLwQI=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1306372775/photo/hedgehog-in-autumn-leaves-waking-up-out-of-hibernation-eyes-open-facing-forward.jpg?s=612x612&w=0&k=20&c=JBqEma1zKdXl3-OVBv0PL6eSpxrTwRYtaKiQg_KiVJc=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1143505300/photo/beautiful-natural-background-with-birds-sparrows-sit-on-a-wooden-fence-in-a-rustic-garden.jpg?s=612x612&w=0&k=20&c=NJwdT0ebe4rRyAAhpPKHJmob8nSk44xeFsLXP9DIYrU=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/157507854/photo/lion-cub-affection.jpg?s=612x612&w=0&k=20&c=Bg0_otDNozsTbtRluytM2JaacBdM5gqXX7GIFdjJwvA=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/466395505/photo/red-squirrel-looking-around-a-tree.jpg?s=612x612&w=0&k=20&c=xqKMBPgN9zbsyqat2Q9ubnA7bzIjOw8XnZ-Ze_BcUiI=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1376577018/photo/chinstrap-penguin-on-ice-antarctic-peninsula.jpg?s=612x612&w=0&k=20&c=dkYX02yRKOoqtrS_rrOACnx8s2YyToWVC8ECHE4nl5c=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/2035227312/photo/a-goldfinch-carduelis-carduelis-perching-on-a-twig-against-a-defocused-background.jpg?s=612x612&w=0&k=20&c=yndkzG0u7ZRYTDgQsq37aHZ3GMAHzeWF4sQN3Uuh7uU=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1432985677/video/siberian-green-tabby-cat-eye-macro-closeup.avif?s=640x640&k=20&c=czKQ7IrzChyzKIkcfh3xAcJVRv-vnGsIsGhhGNUl3yY=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1736186958/photo/flying-bumblebee-at-agastache-flowers-in-the-garden.jpg?s=612x612&w=0&k=20&c=QcFryDpe40h3VSKY2z61tbOibkjAVxSPUNcpINjsrDA=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1393369642/photo/female-roe-deer.jpg?s=612x612&w=0&k=20&c=OOGgBV7Cik91vBg8wYwUtUWx5b8V_Sao0jrVcsYlL14=" class="animal">
+    <img loading="lazy" src="https://media.istockphoto.com/id/1276488732/photo/two-birds-bullfinch-and-titmice-sit-perched-on-branches-covered-with-white-snow-in-the-winter.jpg?s=612x612&w=0&k=20&c=-zg0-yDxMlPL3lvqhU1uTRIoasWprfxeszqlxBo3ojc=" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/928/351/620/movie-guardians-of-the-galaxy-vol-2-cassette-groot-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/666/775/773/rocket-raccoon-guardians-of-the-galaxy-2-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/987/274/547/baby-groot-guardians-of-the-galaxy-vol-2-4k-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/508/563/661/minimalism-art-neon-rocket-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/847/276/1017/comic-rocket-guardians-of-the-galaxy-guardians-of-the-galaxy-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c0.wallpaperflare.com/preview/878/814/409/guardians-of-the-galaxy-groot-ceramic-figurine.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/48/431/686/milano-guardians-of-the-galaxy-groot-starship-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/73/203/794/baby-groot-rocket-raccoon-guardians-of-the-galaxy-vol-2-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/421/923/786/baby-groot-wide-screen-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/756/299/804/guardians-of-the-galaxy-marvel-groot-hd-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1661900471228-f99877bcbef9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGlvbiUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1543682704-15adeb008ac4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1720524120449-3f5997f3f7c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1661945191886-897bd2d3e3f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1517649281203-dad836b4abe5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1696862761045-0a65acbede8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fGxpb24lMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://thumbs.dreamstime.com/b/cute-baby-red-panda-bokeh-background-erfect-as-animal-wallpaper-340209258.jpg?w=992" class="animal">
+    <img loading="lazy" src="https://thumbs.dreamstime.com/b/cute-baby-red-panda-bokeh-background-erfect-as-animal-wallpaper-340209252.jpg?w=992" class="animal">
+    <img loading="lazy" src="https://thumbs.dreamstime.com/b/generated-image-cute-baby-panda-sitting-happily-munching-bamboo-leaves-heartwarming-wildlife-scene-344577890.jpg?w=768" class="animal">
+    <img loading="lazy" src="https://thumbs.dreamstime.com/b/baby-panda-holding-red-heart-white-background-plush-doll-celebrates-valentine-s-day-109733967.jpg?w=768" class="animal">
+    <img loading="lazy" src="https://thumbs.dreamstime.com/b/glowing-lights-surround-adorable-baby-panda-as-sleeps-peacefully-serene-atmosphere-372780990.jpg?w=992" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1527118732049-c88155f2107c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuZGElMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1570288685369-f7305163d0e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGFuZGElMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhbmRhJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1527118732049-c88155f2107c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuZGElMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1538099023053-30e7da644196?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBhbmRhJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww" class="animal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1611643378160-39d6dd915b69?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHBhbmRhJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww" class="animal">
+    <img loading="lazy" src="https://images.alphacoders.com/126/thumb-1920-1267372.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/764/505/66/baby-groot-4k-hd-superheroes-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/571/645/194/baby-groot-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/1007/704/1021/comics-groot-baby-groot-guardians-of-the-galaxy-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/247/923/608/artwork-guardians-of-the-galaxy-vol-2-baby-groot-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/747/945/307/comics-groot-baby-groot-guardians-of-the-galaxy-marvel-comics-hd-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/427/400/890/movie-guardians-of-the-galaxy-vol-2-groot-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/1023/157/85/comics-groot-guardians-of-the-galaxy-marvel-comics-hd-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/815/38/531/movie-guardians-of-the-galaxy-vol-2-groot-marvel-comics-hd-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/702/705/75/rocket-raccoon-baby-groot-artwork-hd-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/225/277/235/1920x1080-px-baby-groot-groot-guardians-of-the-galaxy-guardians-of-the-galaxy-vol-2-marvel-cinemati-people-leg-hd-art-wallpaper-preview.jpg" class="animal">
+    <img loading="lazy" src="https://c4.wallpaperflare.com/wallpaper/568/133/168/movie-guardians-of-the-galaxy-groot-wallpaper-preview.jpg" class="animal">
+
+</div>
+
+<script>
+function filterImages(type){
+    const imgs = document.querySelectorAll(".gallery img");
+
+    imgs.forEach(img=>{
+        if(type === "all"){
+            img.style.display = "block";
+        }else{
+            img.style.display = img.classList.contains(type) ? "block" : "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
